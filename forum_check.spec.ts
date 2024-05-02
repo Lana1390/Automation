@@ -15,5 +15,6 @@ test.describe.serial('forum create edit remove steps', () => {
 		await createNewTopic.gotoTitleInput()
 		await createNewTopic.gotoDescriptionInput()
 		await createNewTopic.gotoPostTopic()
+                expect ...
 	})
 })
