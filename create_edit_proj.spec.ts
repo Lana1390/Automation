@@ -21,12 +21,12 @@ const projectDescrED = projectData[2].description[3]
 
 const projectStartDate = randomDate(new Date(2023, 0, 1), new Date(2024, 0, 1))
 const projectCompletionDate = randomDate(projectStartDate, new Date(2025, 0, 1))
-const formattedStartDate = projectStartDate.toISOString().slice(0, 10) //  Форматування дат у формат YYYY-MM-DD
-const formattedCompletionDate = projectCompletionDate.toISOString().slice(0, 10) //  Форматування дат у формат YYYY-MM-DD
+const formattedStartDate = projectStartDate.toISOString().slice(0, 10)
+const formattedCompletionDate = projectCompletionDate.toISOString().slice(0, 10) 
 const stageStartDate = randomDate(projectStartDate, projectCompletionDate)
 const stageCompletionDate = randomDate(stageStartDate, projectCompletionDate)
-const formattedStageStartDate = stageStartDate.toISOString().slice(0, 10) //  Форматування дат у формат YYYY-MM-DD
-const formattedStageCompletionDate = stageCompletionDate.toISOString().slice(0, 10) //  Форматування дат у формат YYYY-MM-DD
+const formattedStageStartDate = stageStartDate.toISOString().slice(0, 10)
+const formattedStageCompletionDate = stageCompletionDate.toISOString().slice(0, 10) 
 
 test.describe.serial('create edit remove project desktop set', () => {
 	test.skip('create the new project D', async ({ page }) => {
@@ -63,8 +63,8 @@ test.describe.serial('create edit remove project desktop set', () => {
 		await createNewProject.checkSelectHideComments()
 		await createNewProject.gotoPublishProject()
 		await expect(page.getByRole('heading', { name: projectNameD })).toHaveText(projectNameD)
-		//await page.getByRole('heading', { name: 'Create новий проєкт D 1.' }).isVisible()
-		// await createNewProject.gotoReviewvPng()
+		await page.getByRole('heading', { name: 'Create новий проєкт D 1.' }).isVisible()
+		await createNewProject.gotoReviewvPng()
 	})
 
 	test.skip('edit members project', async ({ page }) => {
@@ -109,7 +109,6 @@ test.describe.serial('create edit remove project desktop set', () => {
 		await createNewProject.gotoTabCard()
 		await createNewProject.gotoProjectName(projectNameD)
 		await createNewProject.gotoProjectIdea(projectIdeaD)
-		//expect(createNewProject.gotoProjectsPage())
 		const result = await createNewProject.gotoProjectsPage()
 		expect(result).toBeFalsy()
 	})
@@ -120,6 +119,6 @@ test.describe.serial('create edit remove project desktop set', () => {
 		await removeProject.gotoProjectsPage()
 		await page.getByRole('link', { name: projectNameED }).click()
 		await removeProject.gotoProjectEditButton()
-		// await removeProject.gotoRemoveProject()//НЕ ПРАЦЮЄ
+		await removeProject.gotoRemoveProject()
 	})
 })
