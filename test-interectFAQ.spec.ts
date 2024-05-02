@@ -9,8 +9,7 @@ test.setTimeout(60000)
 const generatedText = randomText()
 const question = generatedText.split('? ')[0]
 const answer = generatedText.split(' It ')[1]
-// const questionE = generatedText.split('? ')[0]
-// const answerE = generatedText.split(' It ')[1]
+
 
 test.beforeEach(async ({ page }) => {
 	await pawLogIn({ page })
@@ -43,11 +42,7 @@ test.describe.serial('create edit remove FAQ desktop set', () => {
 		await page.waitForTimeout(1000)
 		await page.getByRole('button', { name: 'Редагувати' }).click()
 		await page.locator('form').first().pressSequentially(question)
-		// .filter({ hasText: 'Питання*Використано 19/200' })
-		// .getByPlaceholder('Введіть питання')
-		//.pressSequentially(questionE)
 		await page.locator('form').last().pressSequentially(answer)
-		// await page.getByText(answer).pressSequentially(answer)
 		await page.getByRole('button', { name: 'Зберігти зміни' }).click()
 		await expect.soft(page.getByRole('button', { name: question })).toHaveText(question)
 	})
@@ -60,8 +55,6 @@ test.describe.serial('create edit remove FAQ desktop set', () => {
 		await createNewFAQ.gotoFAQbutton()
 		await createNewFAQ.gotoWriteLongQuestion()
 		await createNewFAQ.gotoWriteLongAnswer()
-		// await expect(createNewFAQ.writeQuestion).toHaveMaxLength(200);
-		// await expect(createNewFAQ.writeAnswer).toHaveMaxLength(1000);
 		await createNewFAQ.publicFAQ.isDisabled()
 	})
 
