@@ -1,0 +1,28 @@
+[
+	{
+		"name": [
+			"Create a new проєкт D 1.",
+			"Create a new project M - 1.",
+			"Editing the новий project UpM- 1.",
+			"Editing the new проєкт UpD 1."
+		]
+	},
+
+	{
+		"idea": [
+			"Ідея для проєкту D 1.",
+			"This idea для проєкту M 1.",
+			"Editing idea для проєкту UpM 1.",
+			"Editing ідея для проєкту UpD 1."
+		]
+	},
+
+	{
+		"description": [
+			"Мій проєкт D створений для : дорослі >18.",
+			"My project M створений для : all.",
+			"Editing project UpM створений для : all.",
+			"Editing проєкт UpD створений для : дорослі >18."
+		]
+	}
+]

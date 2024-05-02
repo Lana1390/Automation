@@ -1,0 +1,9 @@
+[
+	{
+		"question": ["is it codE ?", "is it REST ?", "is it SQL  ?", "is it noSQL?"]
+	},
+
+	{
+		"answer": ["це TypeScript!", "це архитектура.", "це mySQL!", "це MongoDB."]
+	}
+]
