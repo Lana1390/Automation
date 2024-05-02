@@ -1,4 +1,4 @@
-/*import { ProfileMenu } from './POM/ProfileMenu'
+import { ProfileMenu } from './POM/ProfileMenu'
 
 import { test } from '@playwright/test'
 
@@ -10,6 +10,4 @@ test('test', async ({ page }) => {
 	await Menu.gotoProjects()
 	await Menu.gotoVacancies()
 	await Menu.logout()
-
-	//await page.pause();
-})*/
+})
