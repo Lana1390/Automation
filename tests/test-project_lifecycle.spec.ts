@@ -1,6 +1,6 @@
-import { pawLogIn } from '../POM/fixture_logIn'
-import { projectPage } from '../POM/pageProject'
-import { randomDate } from '../POM/utils'
+import { pawLogIn } from '../pages/fixture_logIn'
+import { projectPage } from '../pages/pageProject'
+import { randomDate } from '../utils/utils'
 
 import { expect, test } from '@playwright/test'
 import * as fs from 'fs'
@@ -73,9 +73,7 @@ test.describe.serial('create edit remove project desktop set', () => {
 
 		await editProject.gotoProjectsPage()
 		await responsePromise
-
 		await page.getByRole('heading', { name: projectNameD }).click()
-
 		await editProject.gotoProjectEditButton()
 		await editProject.gotoCoverFieldJpeg()
 		await editProject.gotoProjectName(projectNameED)
@@ -101,7 +99,7 @@ test.describe.serial('create edit remove project desktop set', () => {
 		await expect(page.getByRole('heading', { name: projectNameED })).toHaveText(projectNameED)
 	})
 
-	test.skip('exit from a partially filled project page', async ({ page }) => {
+	test('exit from a partially filled project page', async ({ page }) => {
 		const createNewProject = new projectPage(page)
 
 		await createNewProject.gotoProjectsPage()
@@ -113,12 +111,13 @@ test.describe.serial('create edit remove project desktop set', () => {
 		expect(result).toBeFalsy()
 	})
 
-	test.skip('remove members project', async ({ page }) => {
-		const removeProject = new projectPage(page)
+	test('remove members project', async ({ page }) => {
+		const pageProject = new projectPage(page)
 
-		await removeProject.gotoProjectsPage()
+		await pageProject.gotoProjectsPage()
 		await page.getByRole('link', { name: projectNameED }).click()
-		await removeProject.gotoProjectEditButton()
-		await removeProject.gotoRemoveProject()
+		await pageProject.gotoProjectEditButton()
+		await pageProject.gotoRemoveProject()
+		await expect(page.getByRole('heading', { name: projectNameED })).toBeHidden(projectNameED)
 	})
 })

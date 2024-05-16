@@ -26,19 +26,16 @@ export class LogInPage {
 	}
 
 	async fillEmail(type: string) {
-		// await this.emailInput.click()
 		const responsePromise = this.page.waitForResponse('**')
 		await this.emailInput.fill(type)
 		await responsePromise
 	}
 
 	async fillPassword(type: string) {
-		// await this.passwordInput.click()
 		await this.passwordInput.fill(type)
 	}
 
 	async gotosubmitButton() {
-		//await this.submitButton.isEnabled()
 		const responsePromise = this.page.waitForResponse('**')
 		await this.submitButton.click()
 		await responsePromise
@@ -65,6 +62,6 @@ export class LogInPage {
 		await this.fillEmail(email)
 		await this.fillPassword(password)
 		await this.gotosubmitButton()
-		await this.gotoAvatarVisible() // Перевірка успішного логіну
+		await this.gotoAvatarVisible() 
 	}
 }

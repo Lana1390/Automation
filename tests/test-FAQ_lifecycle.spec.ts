@@ -1,7 +1,6 @@
-import { pawLogIn } from '../POM/fixture_logIn'
-import { createFAQ } from '../POM/pageFAQ'
-import { randomText } from '../POM/utils'
-
+import { pawLogIn } from '../pages/fixture_logIn'
+import { createFAQ } from '../pages/pageFAQ'
+import { randomText } from '../utils/utils'
 import { expect, test } from '@playwright/test'
 
 test.setTimeout(60000)
@@ -9,7 +8,6 @@ test.setTimeout(60000)
 const generatedText = randomText()
 const question = generatedText.split('? ')[0]
 const answer = generatedText.split(' It ')[1]
-
 
 test.beforeEach(async ({ page }) => {
 	await pawLogIn({ page })
@@ -37,7 +35,6 @@ test.describe.serial('create edit remove FAQ desktop set', () => {
 		await createNewFAQ.gotoProjectPage()
 		await createNewFAQ.gotoEditProjectPage()
 		await createNewFAQ.gotoFAQbutton()
-
 		await page.locator('[id="\\30 _more"]').click()
 		await page.waitForTimeout(1000)
 		await page.getByRole('button', { name: 'Редагувати' }).click()

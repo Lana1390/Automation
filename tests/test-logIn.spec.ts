@@ -1,4 +1,4 @@
-import { LogInPage } from '../POM/logIn'
+import { LogInPage } from '../pages/logIn'
 
 import { expect, test } from '@playwright/test'
 import * as fs from 'fs'
@@ -20,7 +20,7 @@ test('logIn', async ({ page }) => {
 })
 
 test.describe('Login with invalid data', () => {
-	for (const testData of loginData.slice(3, 7))
+	for (const testData of loginData.slice(3, 9))
 		test(`Login with invalid data': "${testData.email}" and password: "${testData.password}"`, async ({
 			page,
 		}) => {
@@ -48,7 +48,6 @@ test.describe('Login with empty data', () => {
 			await pawLogInPage.gotoLogInButton()
 			await pawLogInPage.fillEmail(testData.email)
 			await pawLogInPage.fillPassword(testData.password)
-
 			await expect(pawLogInPage.isSubmitButtonEnabled()).resolves.toBeFalsy()
 			await expect(pawLogInPage.avatarVisible).toBeHidden()
 		})

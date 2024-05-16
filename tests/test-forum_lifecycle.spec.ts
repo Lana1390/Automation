@@ -1,5 +1,5 @@
-import { pawLogIn } from '../POM/fixture_logIn'
-import { forumPage } from '../POM/forumPage'
+import { pawLogIn } from '../pages/fixture_logIn'
+import { forumPage } from '../pages/forumPage'
 
 import { test } from '@playwright/test'
 
@@ -12,9 +12,7 @@ test.describe.serial('forum create edit remove steps', () => {
 		const createNewTopic = new forumPage(page)
 
 		await createNewTopic.gotoForumPage()
-		await createNewTopic.gotoTitleInput()
-		await createNewTopic.gotoDescriptionInput()
-		await createNewTopic.gotoPostTopic()
-                expect ...
+		await createNewTopic.gotoCreateNewTopic()
 	})
 })
+

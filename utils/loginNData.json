@@ -1,0 +1,51 @@
+[
+	{
+		"email": "",
+		"password": ""  
+	},
+
+	{
+		"email": "User1!@gmail.com",
+		"password": ""
+	},
+
+	{
+		"email": "",
+		"password": "yourpassword"
+	},
+
+	{
+		"email": "User1@gmail.com",
+		"password": "yourpassword"
+	},
+
+	{
+		"email": "User!@gmail.com",
+		"password": "yourpassword"
+	},
+
+	{
+		"email": "user@gmail.com",
+		"password": "yourpassword"
+	},
+
+	{
+		"email": "User1!@",
+		"password": "yourpassword"
+	},
+
+	{
+		"email": "User1!@gmail.",
+		"password": "yourpassword"
+	},
+
+	{
+		"email": "AnotherUser2Who!IsRegistred@gmail.com",
+		"password": "yourpassword"
+	},
+
+	{
+		"email": "User1!@gmail.com",
+		"password": "hgfghg1Q"
+	}
+]

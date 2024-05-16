@@ -32,31 +32,12 @@ export class createFAQ {
 		this.writeQuestion = page.locator('input[name="question"][placeholder="Введіть питання"]')
 		this.writeAnswer = page.locator('textarea[name="answer"][placeholder="Короткий опис"]')
 		this.publicFAQ = page.getByRole('button', { name: 'Опублікувати питання' })
-
 		this.FAQmenu = page.locator(
-			'button[id^="radix-:"][id$="sta:"] h3:text-is(?):not([data-state="open"])'
-		) //('[id="radix-\\:R2kauuuuttsta\\:"]') [text*="AAAAAAAAA"]
+			'button[id^="radix-:"][id$="sta:"] h3:text-is(?):not([data-state="open"])')
 		this.editButton = page.getByRole('button', { name: 'Реадагувати' })
 		this.saveChangesButton = page.getByRole('button', { name: 'Зберігти зміни' })
 	}
 
-	// async goto() {
-	//         await this.page.goto('/profile')
-	//     }
-
-	// async pressAvatar() {
-	//         await this.avatar.isVisible()
-	//         await this.avatar.isEnabled()
-	//         await this.avatar.click()
-	//     }
-	//  async gotoProjectsPage() {
-	//         await this.projectsButton.click()
-	//  }
-
-	//  async gotoProjectPage() {
-	//         await this.projectButton.isEnabled()
-	//         await this.projectButton.click()
-	//     }
 
 	async gotoProjectPage() {
 		const responsePromise = this.page.waitForResponse('**')

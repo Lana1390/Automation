@@ -47,7 +47,7 @@ export class projectPage {
 		this.memberProject1 = page.getByRole('link', { name: 'Project1 by User1 project' })
 		this.memberProject3 = page.getByRole('link', { name: 'Project3 by User1 project' })
 		this.projectEditButton = page.getByRole('link', { name: 'Редагувати' })
-		this.mobileBurgerMenu = page.getByRole('main').getByRole('button') //page.locator('button.inline-flex.items-center.justify-center')
+		this.mobileBurgerMenu = page.getByRole('main').getByRole('button')
 		this.mobileCreateProjectButton = page.locator('button.inline-flex.items-center.justify-center')
 		this.tabCard = page.getByRole('tab', { name: 'Візитівка' })
 		this.coverField = page.locator('input[type="file"][accept="image/*"]')

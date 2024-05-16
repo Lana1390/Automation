@@ -1,4 +1,4 @@
-import { bootMainPage } from './POMmainPage'
+import { bootMainPage } from './mainPage'
 
 import { Page } from '@playwright/test'
 
