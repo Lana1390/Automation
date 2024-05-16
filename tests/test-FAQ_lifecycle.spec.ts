@@ -1,5 +1,6 @@
 import { pawLogIn } from '../pages/fixture_logIn'
 import { createFAQ } from '../pages/pageFAQ'
+import { projectPage } from '../pages/pageProject'
 import { randomText } from '../utils/utils'
 import { expect, test } from '@playwright/test'
 
@@ -16,10 +17,10 @@ test.beforeEach(async ({ page }) => {
 test.describe.serial('create edit remove FAQ desktop set', () => {
 	test.skip('create FAQ with valid data', async ({ page }) => {
 		const createNewFAQ = new createFAQ(page)
+		const gotoProjects = new projectPage(page)
 
-		await createNewFAQ.gotoProjectPage()
-		await createNewFAQ.gotoEditProjectPage()
-		await createNewFAQ.gotoFAQbutton()
+		await gotoProjects.gotoProjectsPage()
+		await createNewFAQ.gotoFAQ()
 		await createNewFAQ.checkValidationHints()
 		await createNewFAQ.checkNameHints()
 		await createNewFAQ.writeQuestion.pressSequentially(question)
@@ -31,10 +32,10 @@ test.describe.serial('create edit remove FAQ desktop set', () => {
 
 	test.skip('edit FAQ question', async ({ page }) => {
 		const createNewFAQ = new createFAQ(page)
+		const gotoProjects = new projectPage(page)
 
-		await createNewFAQ.gotoProjectPage()
-		await createNewFAQ.gotoEditProjectPage()
-		await createNewFAQ.gotoFAQbutton()
+		await gotoProjects.gotoProjectsPage()
+		await createNewFAQ.gotoFAQ()
 		await page.locator('[id="\\30 _more"]').click()
 		await page.waitForTimeout(1000)
 		await page.getByRole('button', { name: 'Редагувати' }).click()
@@ -46,10 +47,10 @@ test.describe.serial('create edit remove FAQ desktop set', () => {
 
 	test.skip('create FAQ with invalid long text', async ({ page }) => {
 		const createNewFAQ = new createFAQ(page)
+		const gotoProjects = new projectPage(page)
 
-		await createNewFAQ.gotoProjectPage()
-		await createNewFAQ.gotoEditProjectPage()
-		await createNewFAQ.gotoFAQbutton()
+		await gotoProjects.gotoProjectsPage()
+		await createNewFAQ.gotoFAQ()
 		await createNewFAQ.gotoWriteLongQuestion()
 		await createNewFAQ.gotoWriteLongAnswer()
 		await createNewFAQ.publicFAQ.isDisabled()
@@ -57,10 +58,10 @@ test.describe.serial('create edit remove FAQ desktop set', () => {
 
 	test.skip('remove FAQ question', async ({ page }) => {
 		const createNewFAQ = new createFAQ(page)
+		const gotoProjects = new projectPage(page)
 
-		await createNewFAQ.gotoProjectPage()
-		await createNewFAQ.gotoEditProjectPage()
-		await createNewFAQ.gotoFAQbutton()
+		await gotoProjects.gotoProjectsPage()
+		await createNewFAQ.gotoFAQ()
 		await page.locator('[id="\\30 _more"]').click()
 		await page.getByRole('button', { name: 'Видалити' }).click()
 		await page.getByRole('button', { name: 'Видалити питання' }).click()

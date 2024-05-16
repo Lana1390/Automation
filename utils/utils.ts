@@ -23,18 +23,17 @@ export function randomText(): string {
 	const questions = data[0].question
 	const answers = data[1].answer
 
-	// запитання
+	// генерую запитання
 	const randomQuestionIndex = randomInt(0, questions.length)
 	const question = questions[randomQuestionIndex]
 
-	//відповідь
+	//генерую відповідь
 	const randomAnswerIndex = randomInt(0, answers.length)
 	const answer = answers[randomAnswerIndex]
 
-	// рандомний символ
+	// генерую рандомний символ
 	const randomSymbol = String.fromCharCode(randomInt(65, 90)) // A-Z
 
-	// текст
 	return `${randomSymbol} What ${question}? It ${answer}`
 }
 
@@ -47,24 +46,19 @@ interface RandomNames {
 
 export function randomTextP(): RandomNames {
 	const data = JSON.parse(fs.readFileSync('tests/utils/projectData.json', 'utf8'))
-
-	//Імʼя для нового десктоп проєкту
+    //десктоп
 	const projectNameD = data[0].name[0]
 	const randomNameD = randomInt(0, projectNameD.length)
-
-	//Імʼя для нового мобайл проєкту
+    //мобайл
 	const projectNameM = data[0].name[1]
 	const randomNameM = randomInt(0, projectNameM.length)
-
-	//Імʼя для нового мобайл проєкту
+	
 	const projectNameED = data[0].name[3]
 	const randomNamED = randomInt(0, projectNameED.length)
 
-	//Імʼя для нового мобайл проєкту
 	const projectNameEM = data[0].name[2]
 	const randomNameEM = randomInt(0, projectNameEM.length)
 
-	// рандомний символ
 	const randomSymbol = String.fromCharCode(randomInt(65, 90)) // A-Z
 
 	return {
@@ -85,20 +79,15 @@ export async function findProjectWithPagination(
 
 	while (currentPage <= maxPages) {
 		try {
-			// Пошук проекту на поточній сторінці
 			const projectLink = page.getByRole('link', { name: projectText, exact: true })
 			await projectLink.click()
 
-			return // Проект знайдено, вихід з функції
+			return // вихід з функції
 		} catch (error) {
-			// Проект не знайдено, перехід на наступну сторінку
 			console.warn(`Project "${projectText}" not found on page ${currentPage}. Trying next page...`)
-
-			// Перевірка, чи є кнопка пагінації
 			if (!(await page.locator(paginationSelector).isVisible())) {
 				throw new Error(`Pagination button not found on page ${currentPage}.`)
 			}
-
 			await page.click(paginationSelector)
 			currentPage++
 		}

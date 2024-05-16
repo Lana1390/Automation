@@ -1,7 +1,6 @@
 import { pawLogIn } from '../pages/fixture_logIn'
 import { projectPage } from '../pages/pageProject'
 import { randomDate } from '../utils/utils'
-
 import { expect, test } from '@playwright/test'
 import * as fs from 'fs'
 

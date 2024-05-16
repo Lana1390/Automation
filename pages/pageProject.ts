@@ -87,16 +87,6 @@ export class projectPage {
 		await this.projectsButton.click()
 	}
 
-	// async gotoMobileBurgerMenu() {
-	// 	await this.mobileBurgerMenu.waitFor()
-	// 	await this.mobileBurgerMenu.click()
-	// }
-
-	// async gotoMobileCreateProject() {
-	// 	await this.mobileCreateProjectButton.isEnabled()
-	// 	await this.mobileCreateProjectButton.click()
-	// }
-
 	async gotoCreateProject() {
 		await this.createProjectButton.click()
 	}
@@ -141,19 +131,19 @@ export class projectPage {
 	}
 
 	async gotoProjectName(type: string) {
-		// await this.projectName.isVisible()
-		// await this.projectName.click()
+		await this.projectName.isVisible()
+		await this.projectName.click()
 		await this.projectName.fill(type)
 	}
 
 	async gotoProjectIdea(type: string) {
-		// await this.projectIdea.isVisible()
-		// await this.projectIdea.click()
+		await this.projectIdea.isVisible()
+		await this.projectIdea.click()
 		await this.projectIdea.fill(type)
 	}
 
 	async gotoCategoryProjectNames() {
-		// await this.projectCategoryNames.isEnabled()
+		await this.projectCategoryNames.isEnabled()
 		await this.projectCategoryNames.click()
 	}
 
@@ -163,12 +153,12 @@ export class projectPage {
 	}
 
 	async gotoNextButton() {
-		// await this.nextButton.isEnabled()
+		await this.nextButton.isEnabled()
 		await this.nextButton.click()
 	}
 
 	async gotoTabDescription() {
-		//await this.tabDescription.isEnabled()
+		await this.tabDescription.isEnabled()
 		await this.tabDescription.isVisible()
 	}
 
@@ -177,13 +167,13 @@ export class projectPage {
 	}
 
 	async gotoDescriptionCard(type: string) {
-		//await this.descriptionCard.isVisible()
-		// await this.descriptionCard.click()
+		await this.descriptionCard.isVisible()
+		await this.descriptionCard.click()
 		await this.descriptionCard.fill(type)
 	}
 
 	async gotoSettingsTab() {
-		//await this.settingsTab.isEnabled()
+		await this.settingsTab.isEnabled()
 		await this.settingsTab.click()
 	}
 
@@ -224,13 +214,13 @@ export class projectPage {
 	}
 
 	async gotoPublishProject() {
-		//await this.publishProject.isVisible()
-		// await this.publishProject.isEnabled()
+		await this.publishProject.isVisible()
+		await this.publishProject.isEnabled()
 		await this.publishProject.click()
 	}
 
 	async gotoRemoveProject() {
-		//await this.publishProject.isVisible()
+		await this.publishProject.isVisible()
 		await this.removeProject.isEnabled()
 		await this.removeProject.click()
 	}

@@ -1,5 +1,4 @@
 import { LogInPage } from './logIn'
-
 import { Page } from '@playwright/test'
 import * as fs from 'fs'
 

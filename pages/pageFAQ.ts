@@ -39,25 +39,9 @@ export class createFAQ {
 	}
 
 
-	async gotoProjectPage() {
-		const responsePromise = this.page.waitForResponse('**')
-		await this.page.goto('/profile')
-		await responsePromise
-
-		await this.avatar.isVisible()
-		// await this.avatar.isEnabled()
-		await this.avatar.click()
-		await this.projectsButton.click()
-		// await this.projectButton.isEnabled()
-		await this.projectButton.click()
-	}
-	async gotoEditProjectPage() {
+	async gotoFAQ() {
 		await this.editProjectButton.isEnabled()
 		await this.editProjectButton.click()
-	}
-
-	async gotoFAQbutton() {
-		// await this.FAQbutton.isEnabled()
 		await this.FAQbutton.click()
 	}
 

@@ -42,12 +42,12 @@ export class LogInPage {
 	}
 
 	async isSubmitButtonEnabled() {
-		return this.submitButton.isEnabled() // Повертаємо Promise<boolean>
+		return this.submitButton.isEnabled()
 	}
 
 	async gotoAvatarVisible() {
 		await this.avatarVisible.isVisible()
-		//await this.avatarVisible.isEnabled()
+		await this.avatarVisible.isEnabled()
 	}
 
 	async chekLoggedIn() {
