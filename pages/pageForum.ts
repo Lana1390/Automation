@@ -19,7 +19,6 @@ export class forumPage {
 		this.titleInput = page.getByPlaceholder('Введіть заголовок')
 		this.descriptionInput = page.getByPlaceholder('Що ви хочете обговорити')
 		this.categoriesTopic = page.locator('button').filter({ hasText: 'Оберіть варіант' })
-		//await page.locator('button').filter({ hasText: 'Оберіть варіант' }).click();
 		this.categoryTopic = page.getByRole('option', { name: 'Моя історія' })
 		this.postButton = page.getByRole('button', { name: 'Опублікувати обговорення' })
 		this.burgerMenu = page.getByRole('banner').getByRole('list').getByRole('button')

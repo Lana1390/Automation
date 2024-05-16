@@ -148,7 +148,7 @@ export class projectPage {
 	}
 
 	async gotoCategoryProjectName() {
-		//await this.projectCategoryName.isEnabled()
+		await this.projectCategoryName.isEnabled()
 		await this.projectCategoryName.click()
 	}
 

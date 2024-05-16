@@ -38,7 +38,6 @@ export class createFAQ {
 		this.saveChangesButton = page.getByRole('button', { name: 'Зберігти зміни' })
 	}
 
-
 	async gotoFAQ() {
 		await this.editProjectButton.isEnabled()
 		await this.editProjectButton.click()
@@ -62,7 +61,6 @@ export class createFAQ {
 		await this.writeQuestion.isVisible()
 		const longQuestion = 'Q?'.repeat(201)
 		await this.writeQuestion.fill(longQuestion)
-
 		// const currentText = await this.writeQuestion.inputValue()
 		// expect(currentText.length).toBeLessThanOrEqual(200)
 	}
@@ -70,55 +68,13 @@ export class createFAQ {
 	async gotoWriteLongAnswer() {
 		await this.writeAnswer.isVisible()
 		const longAnswer = 'A!'.repeat(1001)
-		// await this.writeAnswer.click()
 		await this.writeAnswer.fill(longAnswer)
-
 		// const currentText = await this.writeAnswer.inputValue()
 		// expect(currentText.length).toBeLessThanOrEqual(1000)
 	}
 
-	// async gotoWriteQuestion(t) {
-	// 	await this.writeQuestion.isVisible()
-	// 	await this.writeQuestion.focus()
-	// 	await this.writeQuestion.type()
-
-	// }
-
-	// async gotoWriteAnswer() {
-	// 	await this.writeAnswer.isVisible()
-	// 	await this.writeAnswer.focus()
-	// 	await this.writeAnswer.type('Answer')
-
-	// }
-	// async gotoFAQmenu() {
-	// 	await this.FAQmenu.click()
-	// }
-
-	// async gotoEditFAQbutton() {
-	// 	await this.editButton.isEnabled()
-	// 	await this.editButton.click()
-	// }
-
-	// async gotoChangeQuestion() {
-	// 	await this.writeAnswer.isVisible()
-	// 	const newQuestionText = 'Новий текст для питання'
-	// 	await this.writeAnswer.fill(newQuestionText)
-	// }
-
-	// async gotoSaveChanges() {
-	// 	await this.saveChangesButton.isEnabled()
-	// 	await this.saveChangesButton.click()
-	// }
-
-	// async gotoChangeAnswer() {
-	//    await this.writeAnswer.isVisible()
-	//     const newAnswerText = 'Новий текст для відповіді';
-	//     await yourPageObject.editAnswer(newAnswerText);
-	//     await expect(yourPageObject.writeAnswer.inputValue()).resolves.toEqual(newAnswerText);
-	// }
-
 	async gotoPublicFAQ() {
-		//await this.publicFAQ.isEnabled()
+		await this.publicFAQ.isEnabled()
 		await this.publicFAQ.click()
 	}
 }

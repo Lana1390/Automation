@@ -1,5 +1,4 @@
-import { LogInPage } from '../pages/logIn'
-
+import { LogInPage } from '../pages/pageLogIn'
 import { expect, test } from '@playwright/test'
 import * as fs from 'fs'
 
